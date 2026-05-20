@@ -119,7 +119,7 @@
           <i class="fa-solid fa-chevron-left text-sm"></i>
         </button>
         <div id="slide-counter" class="px-5 text-xs font-bold tracking-[0.2em] text-[#1A1A1A] uppercase">
-          01 / 16
+          01 / 22
         </div>
         <button id="btn-next" class="w-10 h-10 rounded-full bg-gray-100 text-[#1A1A1A] flex items-center justify-center hover:bg-[#5B8DB8] hover:text-white transition-all">
           <i class="fa-solid fa-chevron-right text-sm"></i>
@@ -138,10 +138,13 @@
         <div class="absolute inset-0 bg-gradient-to-r from-[#1A1A1A]/95 via-[#1A1A1A]/80 to-[#5B8DB8]/20"></div>
       </div>
       
-      <!-- Ambient Orbs -->
-      <div class="absolute inset-0 overflow-hidden pointer-events-none">
-        <div class="absolute w-[600px] h-[600px] rounded-full bg-[#5B8DB8]/20 blur-[120px] animate-float" style="top:10%;left:-10%"></div>
-        <div class="absolute w-[500px] h-[500px] rounded-full bg-blue-400/10 blur-[120px] animate-float" style="bottom:-10%;right:10%; animation-delay: 2s;"></div>
+      <!-- Ambient Orbs & Floating Circles -->
+      <div class="absolute inset-0 overflow-hidden pointer-events-none floating-circle print:hidden">
+        <div class="absolute w-[300px] h-[300px] rounded-full border border-white/20 animate-float-slow" style="top:10%;left:-5%"></div>
+        <div class="absolute w-[200px] h-[200px] rounded-full border border-white/20 animate-float-medium" style="top:60%;right:-3%"></div>
+        <div class="absolute w-[150px] h-[150px] rounded-full border border-white/20 animate-float-fast" style="bottom:20%;left:10%"></div>
+        <div class="absolute w-[100px] h-[100px] rounded-full border border-white/20 animate-float-medium" style="top:30%;right:15%"></div>
+        <div class="absolute w-[250px] h-[250px] rounded-full border border-white/20 animate-float-slow" style="bottom:-5%;right:30%"></div>
       </div>
 
       <div class="relative z-10 w-full h-full max-w-7xl mx-auto px-8 md:px-16 flex items-center">
@@ -162,20 +165,26 @@
       </div>
     </div>
 
-    <!-- SLIDE 02: OUR STORY (Collage Layout) -->
+    <!-- SLIDE 02: OUR STORY (User's Updated Collage Layout) -->
     <div class="slide-item absolute inset-0 w-full min-h-screen transition-all duration-700 ease-modern opacity-0 z-0 pointer-events-none bg-[#F8F7F4]">
+      <div class="absolute inset-0 overflow-hidden pointer-events-none floating-circle print:hidden">
+        <div class="absolute w-[300px] h-[300px] rounded-full border border-[#5B8DB8]/20 animate-float-slow" style="top:10%;left:-5%"></div>
+        <div class="absolute w-[200px] h-[200px] rounded-full border border-[#5B8DB8]/20 animate-float-medium" style="top:60%;right:-3%"></div>
+        <div class="absolute w-[150px] h-[150px] rounded-full border border-[#5B8DB8]/20 animate-float-fast" style="bottom:20%;left:10%"></div>
+      </div>
+
       <div class="w-full h-full grid lg:grid-cols-12 relative overflow-hidden">
         <div class="lg:col-span-5 h-full relative z-10 p-12 flex items-center justify-center reveal-right">
-          <!-- Aesthetic Collage -->
+          <!-- Aesthetic Collage from User's Links -->
           <div class="relative w-full h-[80%]">
             <div class="absolute top-0 right-0 w-[70%] h-[70%] rounded-3xl overflow-hidden shadow-2xl border-[6px] border-white z-10 hover:scale-105 transition-transform duration-500">
-              <img src="https://images.unsplash.com/photo-1542744094-24638ea0b3b5?w=1080&q=100" class="w-full h-full object-cover">
+              <img src="https://i.ibb.co/1GYtkyv2/Untitled-1.jpg?w=1080&q=100" class="w-full h-full object-cover">
             </div>
             <div class="absolute bottom-10 left-0 w-[60%] h-[50%] rounded-3xl overflow-hidden shadow-2xl border-[6px] border-white z-20 hover:scale-105 transition-transform duration-500">
-              <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=1080&q=100" class="w-full h-full object-cover">
+              <img src="https://i.ibb.co/WpHwjkCz/Untitled-2.jpg?w=1080&q=100" class="w-full h-full object-cover">
             </div>
             <div class="absolute bottom-0 right-10 w-[40%] h-[40%] rounded-3xl overflow-hidden shadow-2xl border-[6px] border-white z-30 hover:scale-105 transition-transform duration-500">
-              <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?w=800&q=100" class="w-full h-full object-cover">
+              <img src="https://i.ibb.co/4ZTdJx9q/Untitled-3.jpg?w=800&q=100" class="w-full h-full object-cover">
             </div>
           </div>
         </div>
@@ -225,14 +234,20 @@
         </div>
 
         <div class="relative h-full overflow-hidden reveal-right delay-200 hidden lg:block">
-          <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1920&q=100" class="w-full h-full object-cover opacity-80">
-          <div class="absolute inset-0 bg-gradient-to-r from-[#1A1A1A] via-transparent to-transparent"></div>
+          <!-- User's updated image link -->
+          <img src="https://i.ibb.co/TD7nx1ky/presentation.jpg?w=1920&q=100" class="w-full h-full object-cover opacity-80">
+          <div class="absolute inset-0 bg-gradient-to-r from-[#1A1A1A] via-[#1A1A1A]/80 to-transparent"></div>
         </div>
       </div>
     </div>
 
-    <!-- SLIDE 04: WHAT WE DO (Pixabay Shoe Collage) -->
+    <!-- SLIDE 04: WHAT WE DO (User's Updated Shoe Collage) -->
     <div class="slide-item absolute inset-0 w-full min-h-screen transition-all duration-700 ease-modern opacity-0 z-0 pointer-events-none bg-[#F8F7F4]">
+      <div class="absolute inset-0 overflow-hidden pointer-events-none floating-circle print:hidden">
+        <div class="absolute w-[300px] h-[300px] rounded-full border border-[#5B8DB8]/20 animate-float-slow" style="top:10%;left:-5%"></div>
+        <div class="absolute w-[200px] h-[200px] rounded-full border border-[#5B8DB8]/20 animate-float-medium" style="top:60%;right:-3%"></div>
+      </div>
+
       <div class="w-full h-full grid lg:grid-cols-12 relative z-10">
         <div class="lg:col-span-5 p-10 lg:p-20 flex flex-col justify-center relative z-10">
           <div class="max-w-xl">
@@ -259,17 +274,17 @@
 
         <div class="lg:col-span-7 relative h-full flex items-center justify-center p-12 reveal-scale delay-200">
           <div class="relative w-full h-[85%]">
-            <!-- Big Hero Image -->
+            <!-- Big Hero Image from User -->
             <div class="absolute inset-0 rounded-[3rem] overflow-hidden shadow-2xl border-[8px] border-white z-10 hover:scale-[1.02] transition-transform duration-500">
-              <img src="https://cdn.pixabay.com/photo/2016/06/20/21/46/sport-shoes-1470061_1280.jpg" class="w-full h-full object-cover">
+              <img src="https://i.ibb.co/WpRjMVGd/shutterstock-9380755-1.jpg" class="w-full h-full object-cover">
             </div>
-            <!-- Floating Overlay Image 1 -->
+            <!-- Floating Overlay Image 1 from User -->
             <div class="absolute -top-6 -left-6 w-1/3 aspect-square rounded-3xl overflow-hidden shadow-2xl border-[6px] border-white z-20 hover:scale-110 transition-transform duration-500">
-              <img src="https://images.unsplash.com/photo-1556906781-9a412961c28c?w=800&q=100" class="w-full h-full object-cover">
+              <img src="https://www.jmalogos.com/assets/poolLOGO-Js0zgDqw.png?w=800&q=100" class="w-full h-full object-cover">
             </div>
-            <!-- Floating Overlay Image 2 -->
+            <!-- Floating Overlay Image 2 from User -->
             <div class="absolute -bottom-10 -right-10 w-[40%] aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl border-[6px] border-white z-20 hover:scale-110 transition-transform duration-500">
-              <img src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?w=800&q=100" class="w-full h-full object-cover">
+              <img src="https://www.jmalogos.com/assets/headphonesLOGO-oAvyun4J.png?w=800&q=100" class="w-full h-full object-cover">
             </div>
           </div>
         </div>
@@ -279,7 +294,7 @@
     <!-- SLIDE 05: WHO WE ARE (Center Alignment) -->
     <div class="slide-item absolute inset-0 w-full min-h-screen transition-all duration-700 ease-modern opacity-0 z-0 pointer-events-none bg-[#1A1A1A]">
       <div class="w-full h-full flex flex-col relative z-10">
-        <!-- Top Image Collage -->
+        <!-- Top Image Collage Background from User code -->
         <div class="h-[55%] w-full relative reveal-up">
           <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=1920&q=100" class="w-full h-full object-cover opacity-60">
           <div class="absolute inset-0 bg-gradient-to-t from-[#1A1A1A] via-[#1A1A1A]/50 to-transparent"></div>
@@ -325,7 +340,6 @@
 
     <!-- SLIDE 06: END TO END -->
     <div class="slide-item absolute inset-0 w-full min-h-screen transition-all duration-700 ease-modern opacity-0 z-0 pointer-events-none bg-[#F8F7F4]">
-      <!-- Animated Floating Elements -->
       <div class="absolute inset-0 overflow-hidden pointer-events-none print:hidden">
         <div class="absolute w-[400px] h-[400px] rounded-full bg-[#5B8DB8]/10 blur-[80px] animate-float-slow" style="top:10%;left:5%"></div>
         <div class="absolute w-[500px] h-[500px] rounded-full bg-[#5B8DB8]/5 blur-[100px] animate-float-medium" style="bottom:10%;right:5%"></div>
@@ -406,7 +420,6 @@
         </div>
         
         <div class="lg:col-span-7 relative reveal-right delay-200">
-          <!-- Giant Laptop Breakout -->
           <div class="absolute inset-0 bg-[#5B8DB8]/20 blur-[100px] rounded-full scale-150 -z-10"></div>
           
           <div class="relative w-[120%] -ml-[10%] aspect-[16/10] bg-white rounded-t-3xl rounded-b-md shadow-[0_0_80px_rgba(0,0,0,0.8)] border-[8px] border-[#2A2A2A] overflow-hidden group">
@@ -417,7 +430,6 @@
               <div class="w-2.5 h-2.5 rounded-full bg-green-500"></div>
             </div>
             
-            <!-- Floating UI Element -->
             <div class="absolute bottom-10 left-10 bg-white/90 backdrop-blur-md p-4 rounded-xl shadow-2xl flex items-center gap-4 border border-white group-hover:-translate-y-2 transition-transform duration-500">
               <div class="w-10 h-10 bg-[#5B8DB8] rounded-full flex items-center justify-center text-white"><i class="fa-solid fa-chart-pie"></i></div>
               <div>
@@ -431,7 +443,261 @@
       </div>
     </div>
 
-    <!-- SLIDE 08: ONLINE PROJECT PORTAL (Timeline Process) -->
+    <!-- NEW SLIDE 08: STOREFRONT ECOSYSTEM -->
+    <div class="slide-item absolute inset-0 w-full min-h-screen transition-all duration-700 ease-modern opacity-0 z-0 pointer-events-none bg-[#F8F7F4]">
+      <div class="w-full h-full grid lg:grid-cols-12 relative z-10">
+        <div class="lg:col-span-5 relative h-full hidden lg:block overflow-hidden reveal-right">
+          <img src="https://images.unsplash.com/photo-1600132806370-bf17e65e942f?w=1920&q=100" class="w-full h-full object-cover">
+          <div class="absolute inset-0 bg-gradient-to-r from-transparent to-[#F8F7F4]"></div>
+        </div>
+
+        <div class="lg:col-span-7 p-10 lg:p-20 flex flex-col justify-center reveal-left delay-200">
+          <h3 class="text-[#5B8DB8] font-bold tracking-[0.3em] uppercase text-sm mb-4">Ecosystem</h3>
+          <h2 class="text-5xl lg:text-6xl font-extrabold text-[#1A1A1A] mb-6 leading-tight tracking-tight">DIGITAL STOREFRONT ECOSYSTEM</h2>
+          <p class="text-xl text-[#666666] leading-relaxed mb-12 font-light border-l-4 border-[#5B8DB8] pl-6">Building comprehensive digital programs, not just selling products.</p>
+          
+          <div class="grid md:grid-cols-2 gap-6">
+            <div class="bento-card-light p-6 hover:-translate-y-2 transition-transform cursor-default">
+              <i class="fa-solid fa-building text-3xl text-[#5B8DB8] mb-4"></i>
+              <h4 class="text-xl font-bold text-[#1A1A1A] mb-2">Company Stores</h4>
+              <p class="text-[#666666] text-sm leading-relaxed">Centralized hubs for internal gear, uniforms, and corporate gifting.</p>
+            </div>
+            <div class="bento-card-light p-6 hover:-translate-y-2 transition-transform cursor-default">
+              <i class="fa-solid fa-fire text-3xl text-[#5B8DB8] mb-4"></i>
+              <h4 class="text-xl font-bold text-[#1A1A1A] mb-2">Pop-Up Stores</h4>
+              <p class="text-[#666666] text-sm leading-relaxed">Time-sensitive microsites perfect for events and limited drops.</p>
+            </div>
+            <div class="bento-card-light p-6 hover:-translate-y-2 transition-transform cursor-default">
+              <i class="fa-solid fa-gift text-3xl text-[#5B8DB8] mb-4"></i>
+              <h4 class="text-xl font-bold text-[#1A1A1A] mb-2">Redemption Sites</h4>
+              <p class="text-[#666666] text-sm leading-relaxed">Seamless platforms for reward programs and incentive fulfillment.</p>
+            </div>
+            <div class="bento-card-light p-6 hover:-translate-y-2 transition-transform cursor-default">
+              <i class="fa-solid fa-bolt text-3xl text-[#5B8DB8] mb-4"></i>
+              <h4 class="text-xl font-bold text-[#1A1A1A] mb-2">On-Demand</h4>
+              <p class="text-[#666666] text-sm leading-relaxed">Zero-inventory solutions for rapid, flexible merchandise ordering.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- NEW SLIDE 09: CORPORATE STORES (CHUBB CONCEPT) -->
+    <div class="slide-item absolute inset-0 w-full min-h-screen transition-all duration-700 ease-modern opacity-0 z-0 pointer-events-none bg-[#F8F7F4]">
+      <div class="w-full h-full grid lg:grid-cols-2 relative z-10 max-w-7xl mx-auto px-8 md:px-16 items-center gap-16">
+        <div class="reveal-right">
+          <h3 class="text-[#5B8DB8] font-bold tracking-[0.3em] uppercase text-sm mb-4">Storefront Focus</h3>
+          <h2 class="text-5xl lg:text-6xl font-extrabold text-[#1A1A1A] mb-6 leading-tight tracking-tight">COMPANY STORES & UNIFORMS</h2>
+          <p class="text-xl text-[#666666] leading-relaxed mb-8 font-light">Centralized, always-on hubs for your brand.</p>
+          
+          <div class="space-y-4">
+            <div class="flex items-start gap-4">
+              <i class="fa-solid fa-check text-[#5B8DB8] mt-1.5"></i>
+              <p class="text-[#1A1A1A] font-medium leading-relaxed">Create a unified shopping experience for employees globally.</p>
+            </div>
+            <div class="flex items-start gap-4">
+              <i class="fa-solid fa-check text-[#5B8DB8] mt-1.5"></i>
+              <p class="text-[#1A1A1A] font-medium leading-relaxed">Streamline uniform ordering with tailored allowances.</p>
+            </div>
+            <div class="flex items-start gap-4">
+              <i class="fa-solid fa-check text-[#5B8DB8] mt-1.5"></i>
+              <p class="text-[#1A1A1A] font-medium leading-relaxed">Maintain strict brand compliance across all merchandise.</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="relative reveal-left delay-300">
+          <div class="w-full aspect-[4/3] bg-white rounded-3xl shadow-2xl border-[8px] border-white overflow-hidden relative group hover:-translate-y-2 transition-transform duration-500">
+            <!-- E-commerce clothing grid image -->
+            <img src="https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?w=1920&q=100" class="w-full h-full object-cover">
+            
+            <!-- Mock UI Elements -->
+            <div class="absolute top-4 left-4 right-4 h-12 bg-white/90 backdrop-blur-md rounded-xl flex items-center justify-between px-4 shadow-sm border border-black/5">
+              <div class="w-24 h-4 bg-gray-200 rounded"></div>
+              <div class="flex gap-2">
+                <div class="w-16 h-4 bg-gray-200 rounded"></div>
+                <div class="w-16 h-4 bg-gray-200 rounded"></div>
+              </div>
+            </div>
+            <div class="absolute top-20 left-4 w-32 bg-white/90 backdrop-blur-md rounded-xl p-4 shadow-sm border border-black/5">
+              <div class="w-16 h-3 bg-gray-300 rounded mb-4"></div>
+              <div class="space-y-2">
+                <div class="w-20 h-2 bg-gray-200 rounded"></div>
+                <div class="w-16 h-2 bg-gray-200 rounded"></div>
+                <div class="w-24 h-2 bg-gray-200 rounded"></div>
+                <div class="w-12 h-2 bg-gray-200 rounded"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- NEW SLIDE 10: POP-UP STORES -->
+    <div class="slide-item absolute inset-0 w-full min-h-screen transition-all duration-700 ease-modern opacity-0 z-0 pointer-events-none bg-[#1A1A1A]">
+      <div class="w-full h-full grid lg:grid-cols-2 relative z-10 max-w-7xl mx-auto px-8 md:px-16 items-center gap-16">
+        
+        <div class="relative reveal-right delay-300 hidden lg:block">
+          <div class="w-2/3 aspect-[9/16] bg-[#2A2A2A] rounded-[2.5rem] shadow-[0_0_60px_rgba(91,141,184,0.3)] border-[8px] border-[#333] overflow-hidden relative group hover:scale-105 transition-transform mx-auto">
+            <!-- Mobile shopping trendy image -->
+            <img src="https://images.unsplash.com/photo-1607083206968-13611e3d76db?w=1080&q=100" class="w-full h-full object-cover">
+            
+            <!-- Mock Mobile UI -->
+            <div class="absolute bottom-0 w-full h-24 bg-gradient-to-t from-black to-transparent flex items-end justify-center pb-6">
+              <div class="w-3/4 h-12 bg-[#5B8DB8] rounded-full flex items-center justify-center text-white font-bold text-sm shadow-lg">SHOP DROP</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="reveal-left">
+          <h3 class="text-[#5B8DB8] font-bold tracking-[0.3em] uppercase text-sm mb-4">Storefront Focus</h3>
+          <h2 class="text-5xl lg:text-6xl font-extrabold text-white mb-6 leading-tight tracking-tight">POP-UP & EVENT STORES</h2>
+          <p class="text-xl text-white/70 leading-relaxed mb-8 font-light">High-impact, time-sensitive microsites.</p>
+          
+          <div class="space-y-4">
+            <div class="flex items-start gap-4">
+              <i class="fa-solid fa-bolt text-[#5B8DB8] mt-1.5"></i>
+              <p class="text-white font-medium leading-relaxed">Build hype with exclusive merchandise drops.</p>
+            </div>
+            <div class="flex items-start gap-4">
+              <i class="fa-solid fa-bolt text-[#5B8DB8] mt-1.5"></i>
+              <p class="text-white font-medium leading-relaxed">Perfect for conferences, off-sites, and seasonal events.</p>
+            </div>
+            <div class="flex items-start gap-4">
+              <i class="fa-solid fa-bolt text-[#5B8DB8] mt-1.5"></i>
+              <p class="text-white font-medium leading-relaxed">Mobile-optimized for seamless on-the-go purchasing.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- NEW SLIDE 11: REDEMPTION & INCENTIVE -->
+    <div class="slide-item absolute inset-0 w-full min-h-screen transition-all duration-700 ease-modern opacity-0 z-0 pointer-events-none bg-[#F8F7F4]">
+      <div class="w-full h-full grid lg:grid-cols-2 relative z-10 max-w-7xl mx-auto px-8 md:px-16 items-center gap-16">
+        <div class="reveal-right">
+          <h3 class="text-[#5B8DB8] font-bold tracking-[0.3em] uppercase text-sm mb-4">Storefront Focus</h3>
+          <h2 class="text-5xl lg:text-6xl font-extrabold text-[#1A1A1A] mb-6 leading-tight tracking-tight">REWARDS & REDEMPTION</h2>
+          <p class="text-xl text-[#666666] leading-relaxed mb-8 font-light">Frictionless platforms for employee appreciation and incentive fulfillment.</p>
+          
+          <div class="space-y-4">
+            <div class="flex items-start gap-4">
+              <i class="fa-solid fa-gift text-[#5B8DB8] mt-1.5"></i>
+              <p class="text-[#1A1A1A] font-medium leading-relaxed">Points-based checkout systems for seamless reward claims.</p>
+            </div>
+            <div class="flex items-start gap-4">
+              <i class="fa-solid fa-gift text-[#5B8DB8] mt-1.5"></i>
+              <p class="text-[#1A1A1A] font-medium leading-relaxed">Automate gifting for anniversaries, holidays, and milestones.</p>
+            </div>
+            <div class="flex items-start gap-4">
+              <i class="fa-solid fa-gift text-[#5B8DB8] mt-1.5"></i>
+              <p class="text-[#1A1A1A] font-medium leading-relaxed">Curated premium gifts driving meaningful engagement.</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="relative reveal-left delay-300">
+          <div class="w-full aspect-[4/3] bg-white rounded-3xl shadow-2xl border-[8px] border-white overflow-hidden relative group hover:-translate-y-2 transition-transform duration-500">
+            <!-- Gifts image -->
+            <img src="https://images.unsplash.com/photo-1513118172236-00b7cc57e1fa?w=1920&q=100" class="w-full h-full object-cover">
+            
+            <!-- Mock UI Overlay -->
+            <div class="absolute bottom-6 right-6 bg-white/90 backdrop-blur-md rounded-xl p-5 shadow-xl border border-black/5 text-center">
+              <p class="text-xs text-[#666666] font-bold uppercase tracking-wider mb-1">Your Balance</p>
+              <p class="text-3xl font-extrabold text-[#5B8DB8]">2,500 <span class="text-sm text-[#1A1A1A]">pts</span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- NEW SLIDE 12: FRONT-END EXPERIENCE -->
+    <div class="slide-item absolute inset-0 w-full min-h-screen transition-all duration-700 ease-modern opacity-0 z-0 pointer-events-none bg-[#1A1A1A]">
+      <div class="w-full h-full max-w-7xl mx-auto px-8 md:px-16 grid lg:grid-cols-12 gap-16 items-center relative z-10">
+        
+        <div class="lg:col-span-6 reveal-left">
+          <h3 class="text-[#5B8DB8] font-bold tracking-[0.3em] uppercase text-sm mb-4">The Interface</h3>
+          <h2 class="text-5xl lg:text-6xl font-extrabold text-white mb-6 leading-tight tracking-tight">THE CLIENT <br>EXPERIENCE</h2>
+          <p class="text-xl text-white/80 leading-relaxed mb-10 font-light border-l-4 border-[#5B8DB8] pl-6">Immersive, brand-controlled shopping tailored for your audience.</p>
+          
+          <div class="space-y-6">
+            <div class="bento-card p-6 flex items-start gap-5">
+              <i class="fa-solid fa-layer-group text-2xl text-[#5B8DB8]"></i>
+              <div>
+                <h4 class="text-white font-bold text-lg mb-1">Curated Collections</h4>
+                <p class="text-white/60 text-sm font-light">Categorized, premium layouts that feel like top retail brands.</p>
+              </div>
+            </div>
+            <div class="bento-card p-6 flex items-start gap-5">
+              <i class="fa-solid fa-compass text-2xl text-[#5B8DB8]"></i>
+              <div>
+                <h4 class="text-white font-bold text-lg mb-1">Intuitive Navigation</h4>
+                <p class="text-white/60 text-sm font-light">Frictionless browsing and filtering for an effortless user journey.</p>
+              </div>
+            </div>
+            <div class="bento-card p-6 flex items-start gap-5">
+              <i class="fa-solid fa-shield-halved text-2xl text-[#5B8DB8]"></i>
+              <div>
+                <h4 class="text-white font-bold text-lg mb-1">Brand Control</h4>
+                <p class="text-white/60 text-sm font-light">Pixel-perfect adherence to your corporate visual identity.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="lg:col-span-6 relative reveal-right delay-200">
+          <div class="relative w-full aspect-[4/5] bg-white rounded-3xl shadow-[0_0_50px_rgba(91,141,184,0.3)] border border-white/20 overflow-hidden group">
+            <img src="https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?w=1920&q=100" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+            <!-- Glass Mock UI on top of image -->
+            <div class="absolute bottom-6 left-6 right-6 glass-panel p-4 rounded-xl flex items-center justify-between">
+              <span class="text-white font-bold text-sm uppercase tracking-widest">Add to Cart</span>
+              <i class="fa-solid fa-arrow-right text-white"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- NEW SLIDE 13: BACK-END REPORTING -->
+    <div class="slide-item absolute inset-0 w-full min-h-screen transition-all duration-700 ease-modern opacity-0 z-0 pointer-events-none bg-[#5B8DB8]">
+      <div class="absolute inset-0">
+        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1920&q=100" class="w-full h-full object-cover opacity-30 mix-blend-overlay blur-sm">
+        <div class="absolute inset-0 bg-[#5B8DB8]/80 mix-blend-multiply"></div>
+      </div>
+
+      <div class="w-full h-full flex flex-col justify-center max-w-7xl mx-auto px-8 md:px-16 relative z-10">
+        <div class="text-center mb-16 reveal-up">
+          <h3 class="text-white/80 font-bold tracking-[0.3em] uppercase text-sm mb-4">The Infrastructure</h3>
+          <h2 class="text-5xl lg:text-7xl font-extrabold text-white tracking-tight mb-6">ROBUST REPORTING</h2>
+          <p class="text-xl text-white/90 leading-relaxed max-w-3xl mx-auto font-light">
+            Powered by Shopify's enterprise infrastructure. Real-time insights, inventory management, and backend control.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8 reveal-scale delay-200">
+          <div class="bg-white/10 backdrop-blur-md border border-white/20 p-10 rounded-3xl hover:-translate-y-2 transition-transform duration-300 shadow-2xl text-center">
+            <i class="fa-solid fa-chart-column text-5xl text-white mb-6"></i>
+            <h3 class="text-2xl font-bold text-white mb-3">Real-Time Analytics</h3>
+            <p class="text-white/80 leading-relaxed font-light">Track sales, popular items, and campaign performance exactly as it happens.</p>
+          </div>
+
+          <div class="bg-white/10 backdrop-blur-md border border-white/20 p-10 rounded-3xl hover:-translate-y-2 transition-transform duration-300 shadow-2xl text-center">
+            <i class="fa-solid fa-boxes-stacked text-5xl text-white mb-6"></i>
+            <h3 class="text-2xl font-bold text-white mb-3">Inventory Tracking</h3>
+            <p class="text-white/80 leading-relaxed font-light">Complete backend visibility to monitor stock levels and automate replenishments.</p>
+          </div>
+
+          <div class="bg-white/10 backdrop-blur-md border border-white/20 p-10 rounded-3xl hover:-translate-y-2 transition-transform duration-300 shadow-2xl text-center">
+            <i class="fa-solid fa-bolt text-5xl text-white mb-6"></i>
+            <h3 class="text-2xl font-bold text-white mb-3">Ease of Ordering</h3>
+            <p class="text-white/80 leading-relaxed font-light">Frictionless checkout processes integrated directly with your corporate systems.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 14: ONLINE PROJECT PORTAL (Timeline Process) -->
     <div class="slide-item absolute inset-0 w-full min-h-screen transition-all duration-700 ease-modern opacity-0 z-0 pointer-events-none bg-[#F8F7F4]">
       <div class="w-full h-full flex flex-col justify-center max-w-7xl mx-auto px-8 md:px-16 relative z-10">
         <div class="text-center mb-24 reveal-up">
@@ -443,7 +709,6 @@
 
         <!-- Modern Horizontal Timeline -->
         <div class="relative w-full px-4 flex items-center justify-between">
-          
           <div class="flex flex-col items-center reveal-left delay-100 z-10 w-40">
             <div class="w-24 h-24 rounded-2xl bg-white text-[#5B8DB8] flex items-center justify-center mb-6 shadow-xl border border-gray-100 hover:scale-110 transition-transform">
               <i class="fa-solid fa-lightbulb text-4xl"></i>
@@ -477,34 +742,30 @@
             </div>
             <p class="text-[#1A1A1A] font-bold text-xl">Delivery</p>
           </div>
-          
         </div>
       </div>
     </div>
 
-    <!-- SLIDE 09: PORTAL IN ACTION (Two Rectangle Collage) -->
+    <!-- SLIDE 15: PORTAL IN ACTION (Two Rectangle Collage) -->
     <div class="slide-item absolute inset-0 w-full min-h-screen transition-all duration-700 ease-modern opacity-0 z-0 pointer-events-none bg-[#1A1A1A]">
       <div class="absolute inset-0 bg-[#5B8DB8]/5"></div>
       <div class="w-full h-full flex flex-col justify-center max-w-7xl mx-auto px-8 md:px-16 relative z-10">
         <h2 class="text-5xl lg:text-6xl font-extrabold text-white mb-16 text-center tracking-tight reveal-up">PORTAL IN ACTION</h2>
         
         <div class="relative w-full h-[60vh] max-h-[600px]">
-          <!-- Back Rectangle -->
           <div class="absolute top-0 left-0 w-[70%] h-[80%] bg-[#2A2A2A] rounded-3xl overflow-hidden shadow-2xl reveal-right delay-200 border-4 border-white/10 group">
             <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1920&q=100" class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-700">
           </div>
           
-          <!-- Front Rectangle Overlapping -->
           <div class="absolute bottom-0 right-0 w-[60%] h-[70%] bg-[#1A1A1A] rounded-3xl overflow-hidden shadow-[0_30px_60px_rgba(0,0,0,0.8)] reveal-left delay-400 border-4 border-[#5B8DB8] group">
             <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1920&q=100" class="w-full h-full object-cover opacity-90 group-hover:scale-105 transition-transform duration-700">
-            <!-- Floating interactive element -->
             <div class="absolute top-6 left-6 bg-[#5B8DB8] text-white px-4 py-2 rounded-full font-bold tracking-widest text-xs uppercase shadow-lg">Live Dashboard</div>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- SLIDE 10: ODP STRATEGY (Collage Layout) -->
+    <!-- SLIDE 16: ODP STRATEGY (Collage Layout) -->
     <div class="slide-item absolute inset-0 w-full min-h-screen transition-all duration-700 ease-modern opacity-0 z-0 pointer-events-none bg-[#F8F7F4]">
       <div class="w-full h-full grid lg:grid-cols-2 relative z-10">
         <div class="p-10 lg:p-20 flex flex-col justify-center reveal-right">
@@ -524,7 +785,6 @@
           </div>
         </div>
         
-        <!-- Collage -->
         <div class="relative h-full hidden lg:flex items-center justify-center p-10 reveal-left delay-300">
           <div class="relative w-full h-[90%]">
             <div class="absolute top-0 right-0 w-[80%] h-[70%] rounded-[2rem] overflow-hidden shadow-2xl border-[6px] border-white z-10 hover:scale-105 transition-transform duration-500">
@@ -538,7 +798,7 @@
       </div>
     </div>
 
-    <!-- SLIDE 11: ODP TECH -->
+    <!-- SLIDE 17: ODP TECH -->
     <div class="slide-item absolute inset-0 w-full min-h-screen transition-all duration-700 ease-modern opacity-0 z-0 pointer-events-none bg-[#1A1A1A]">
       <div class="w-full h-full grid lg:grid-cols-2 relative z-10">
         
@@ -592,7 +852,7 @@
       </div>
     </div>
 
-    <!-- SLIDE 12: KITTING (With Curated Gift Box Image) -->
+    <!-- SLIDE 18: KITTING (With Curated Gift Box Image) -->
     <div class="slide-item absolute inset-0 w-full min-h-screen transition-all duration-700 ease-modern opacity-0 z-0 pointer-events-none bg-[#F8F7F4]">
       <div class="w-full h-full grid lg:grid-cols-2 relative z-10">
         <div class="p-10 lg:p-20 flex flex-col justify-center reveal-right">
@@ -627,18 +887,17 @@
         <div class="relative h-full flex items-center justify-center p-12 lg:p-20 reveal-left delay-300 hidden lg:flex">
           <div class="relative w-full h-[90%]">
             <div class="absolute inset-0 rounded-[3rem] overflow-hidden shadow-2xl border-[8px] border-white z-10 hover:scale-105 transition-transform duration-500">
-              <!-- Replaced with high quality packaging / kitting image -->
               <img src="https://images.unsplash.com/photo-1549465220-1a8b9238cd48?w=1920&q=100" class="w-full h-full object-cover" alt="Custom Packaging">
             </div>
             <div class="absolute -bottom-10 -left-10 w-[60%] aspect-square rounded-3xl overflow-hidden shadow-2xl border-[6px] border-white z-20 hover:scale-110 transition-transform duration-500">
-              <img src="https://images.unsplash.com/photo-1607083206968-13611e3d76db?w=800&q=100" class="w-full h-full object-cover">
+              <img src="https://instagram.fcrk3-3.fna.fbcdn.net/v/t51.82787-15/690311927_18597149866024145_8642498146654590202_n.jpg?stp=dst-jpg_e35_p1080x1080_tt6&_nc_cat=111&ig_cache_key=Mzg5NjIxOTc4MzY1NzgwNjUyMQ%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMTQ0MC5zZHIucmVndWxhcl9waG90by5DMyJ9&_nc_ohc=tQZYXKBATrcQ7kNvwHs8jC3&_nc_oc=AdplOTU0XLtuQRIQkH-GJfsyXMySnEUGmBxCPPe87gkAL95p7XvAWWHbwWGdFlFu5uo&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=instagram.fcrk3-3.fna&_nc_gid=8zXsFOcloNgQXGblHqOasA&_nc_ss=7a22e&oh=00_Af4bJxh66VtNb28WFqUsOMLEJVAZsJ9GtyzZ4AWPDcYF4A&oe=6A125311" class="w-full h-full object-cover">
             </div>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- SLIDE 13: PROVEN SUCCESS (Glass Logo Grid) -->
+    <!-- SLIDE 19: PROVEN SUCCESS (Glass Logo Grid) -->
     <div class="slide-item absolute inset-0 w-full min-h-screen transition-all duration-700 ease-modern opacity-0 z-0 pointer-events-none bg-[#F8F7F4]">
       <div class="w-full h-full flex flex-col justify-center max-w-7xl mx-auto px-8 md:px-16 relative z-10">
         <div class="text-center mb-12 reveal-up">
@@ -667,12 +926,8 @@
       </div>
     </div>
 
-    <!-- SLIDE 14: BRANDS LOGO WALL (Dark Mode Wireframe Grid) -->
+    <!-- SLIDE 20: BRANDS LOGO WALL (Dark Mode Wireframe Grid) -->
     <div class="slide-item absolute inset-0 w-full min-h-screen transition-all duration-700 ease-modern opacity-0 z-0 pointer-events-none bg-[#1A1A1A]">
-      <div class="absolute inset-0 overflow-hidden pointer-events-none">
-        <div class="absolute w-[600px] h-[600px] rounded-full bg-[#5B8DB8]/10 blur-[100px] animate-pulse-slow" style="top:20%;left:20%"></div>
-      </div>
-      
       <div class="w-full h-full flex flex-col justify-center max-w-7xl mx-auto px-8 md:px-16 relative z-10">
         <div class="text-center mb-12 reveal-up">
           <h2 class="text-4xl lg:text-5xl font-extrabold text-white tracking-tight mb-4">ACCESS TO <span class="text-[#5B8DB8]">TOP RETAIL BRANDS</span></h2>
@@ -701,66 +956,57 @@
       </div>
     </div>
 
-    <!-- SLIDE 15: BRAND VOICE (Full Descriptions) -->
+    <!-- SLIDE 21: BRAND VOICE (Full Descriptions) -->
     <div class="slide-item absolute inset-0 w-full min-h-screen transition-all duration-700 ease-modern opacity-0 z-0 pointer-events-none bg-[#5B8DB8]">
       <div class="w-full h-full flex flex-col justify-center max-w-7xl mx-auto px-8 md:px-16 text-white relative z-10">
         <h2 class="text-5xl lg:text-6xl font-extrabold mb-12 text-center tracking-tight text-white reveal-up">POWER YOUR BRAND VOICE</h2>
         
         <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 reveal-up delay-200">
-          
           <div class="bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-3xl hover:bg-white/20 transition-all duration-300 shadow-xl group">
             <i class="fa-solid fa-users-gear text-3xl text-white mb-4 group-hover:scale-110 transition-transform"></i>
             <h4 class="font-bold text-lg mb-2">Account Management</h4>
             <p class="text-sm text-white/80 font-light leading-relaxed">Dedicated experts providing end-to-end guidance, ensuring your campaigns are perfectly executed.</p>
           </div>
-          
           <div class="bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-3xl hover:bg-white/20 transition-all duration-300 shadow-xl group">
             <i class="fa-solid fa-shirt text-3xl text-white mb-4 group-hover:scale-110 transition-transform"></i>
             <h4 class="font-bold text-lg mb-2">Merchandising</h4>
             <p class="text-sm text-white/80 font-light leading-relaxed">Strategic product curation aligning with modern retail trends to elevate your brand perception.</p>
           </div>
-
           <div class="bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-3xl hover:bg-white/20 transition-all duration-300 shadow-xl group">
             <i class="fa-solid fa-wand-magic-sparkles text-3xl text-white mb-4 group-hover:scale-110 transition-transform"></i>
             <h4 class="font-bold text-lg mb-2">Creative Services</h4>
             <p class="text-sm text-white/80 font-light leading-relaxed">In-house design specialists delivering custom mockups, packaging, and innovative brand concepts.</p>
           </div>
-
           <div class="bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-3xl hover:bg-white/20 transition-all duration-300 shadow-xl group">
             <i class="fa-solid fa-bullhorn text-3xl text-white mb-4 group-hover:scale-110 transition-transform"></i>
             <h4 class="font-bold text-lg mb-2">Product Voice</h4>
             <p class="text-sm text-white/80 font-light leading-relaxed">Crafting meaningful narratives around every item to ensure it resonates deeply with your audience.</p>
           </div>
-
           <div class="bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-3xl hover:bg-white/20 transition-all duration-300 shadow-xl group">
             <i class="fa-solid fa-comments text-3xl text-white mb-4 group-hover:scale-110 transition-transform"></i>
             <h4 class="font-bold text-lg mb-2">Communication</h4>
             <p class="text-sm text-white/80 font-light leading-relaxed">Transparent, proactive updates throughout the production lifecycle to keep your team informed.</p>
           </div>
-
           <div class="bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-3xl hover:bg-white/20 transition-all duration-300 shadow-xl group">
             <i class="fa-solid fa-calendar-check text-3xl text-white mb-4 group-hover:scale-110 transition-transform"></i>
             <h4 class="font-bold text-lg mb-2">Event Support</h4>
             <p class="text-sm text-white/80 font-light leading-relaxed">Comprehensive planning and logistics coordination for flawless physical and virtual event activations.</p>
           </div>
-
           <div class="bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-3xl hover:bg-white/20 transition-all duration-300 shadow-xl group">
             <i class="fa-solid fa-microchip text-3xl text-white mb-4 group-hover:scale-110 transition-transform"></i>
             <h4 class="font-bold text-lg mb-2">Technology</h4>
             <p class="text-sm text-white/80 font-light leading-relaxed">Proprietary digital storefronts, inventory tracking, and seamless procurement integrations.</p>
           </div>
-
           <div class="bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-3xl hover:bg-white/20 transition-all duration-300 shadow-xl group">
             <i class="fa-solid fa-star text-3xl text-white mb-4 group-hover:scale-110 transition-transform"></i>
             <h4 class="font-bold text-lg mb-2">All The Extras</h4>
             <p class="text-sm text-white/80 font-light leading-relaxed">From eco-friendly sourcing to white-glove delivery, we provide the finishing touches that matter.</p>
           </div>
-
         </div>
       </div>
     </div>
 
-    <!-- SLIDE 16: OUTRO -->
+    <!-- SLIDE 22: OUTRO -->
     <div class="slide-item absolute inset-0 w-full min-h-screen transition-all duration-700 ease-modern opacity-0 z-0 pointer-events-none bg-[#1A1A1A]">
       <div class="w-full h-full flex flex-col justify-center items-center relative overflow-hidden">
         <img src="https://images.unsplash.com/photo-1528605248644-14dd04022da1?w=1920&q=100" class="absolute inset-0 w-full h-full object-cover opacity-30 mix-blend-luminosity">
@@ -812,7 +1058,7 @@
       });
       downloadMenu.addEventListener('click', (e) => e.stopPropagation());
 
-      // Progress Dots Generation
+      // Progress Dots
       for(let i = 0; i < totalSlides; i++) {
         const dot = document.createElement('button');
         dot.className = `h-2 rounded-full transition-all duration-500 cursor-pointer border border-white/20 shadow-sm ${i === 0 ? 'w-8 bg-white' : 'w-2 bg-white/20'}`;
@@ -834,6 +1080,7 @@
 
         const dir = index > currentSlide ? 1 : -1;
 
+        // Exit Out
         slides[currentSlide].classList.remove('is-active', 'opacity-100', 'z-20', 'pointer-events-auto');
         if (instant) {
             slides[currentSlide].classList.add('opacity-0', 'z-0', 'pointer-events-none');
@@ -842,6 +1089,7 @@
             slides[currentSlide].classList.add('opacity-0', 'z-0', 'pointer-events-none');
         }
         
+        // Enter In
         slides[index].style.transform = 'translateY(0) scale(1)';
         slides[index].classList.remove('opacity-0', 'z-0', 'pointer-events-none');
         slides[index].classList.add('is-active', 'opacity-100', 'z-20', 'pointer-events-auto');
@@ -857,6 +1105,7 @@
         }
       }
 
+      // Action Handlers
       btnPrev.addEventListener('click', () => window.goToSlide(currentSlide - 1));
       btnNext.addEventListener('click', () => window.goToSlide(currentSlide + 1));
 
@@ -896,7 +1145,7 @@
       window.exportDeck = async function(format) {
         downloadMenu.classList.add('opacity-0', 'pointer-events-none', 'translate-y-[-10px]');
         const originalHtml = downloadBtn.innerHTML;
-        downloadBtn.innerHTML = `<svg class="animate-spin h-4 w-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>`;
+        downloadBtn.innerHTML = `<i class="fa-solid fa-spinner fa-spin text-white"></i>`;
         downloadBtn.disabled = true;
 
         const freezeStyle = document.createElement('style');
@@ -913,7 +1162,7 @@
             for (let i = 0; i < slides.length; i++) {
                 slides.forEach(s => { s.classList.remove('opacity-100', 'z-20'); s.classList.add('opacity-0', 'z-0'); });
                 slides[i].classList.remove('opacity-0', 'z-0'); slides[i].classList.add('opacity-100', 'z-20');
-                await new Promise(r => setTimeout(r, 150)); 
+                await new Promise(r => setTimeout(r, 200)); 
                 
                 const canvas = await html2canvas(slides[i], { scale: 2, useCORS: true, logging: false, allowTaint: true });
                 const imgData = canvas.toDataURL('image/jpeg', 0.98);

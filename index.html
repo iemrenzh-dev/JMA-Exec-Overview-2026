@@ -63,9 +63,11 @@
     .slide-item .reveal-left { opacity: 0; transform: translateX(50px); transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1), transform 0.8s cubic-bezier(0.22, 1, 0.36, 1); }
     .slide-item .reveal-right { opacity: 0; transform: translateX(-50px); transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1), transform 0.8s cubic-bezier(0.22, 1, 0.36, 1); }
     .slide-item .reveal-scale { opacity: 0; transform: scale(0.95); transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1), transform 0.8s cubic-bezier(0.22, 1, 0.36, 1); }
+    .slide-item .reveal-blur { opacity: 0; filter: blur(10px); transform: scale(1.05); transition: opacity 1s cubic-bezier(0.22, 1, 0.36, 1), filter 1s ease, transform 1s cubic-bezier(0.22, 1, 0.36, 1); }
     
     /* Active Triggers */
     .slide-item.is-active .reveal-up, .slide-item.is-active .reveal-left, .slide-item.is-active .reveal-right, .slide-item.is-active .reveal-scale { opacity: 1; transform: translate(0, 0) scale(1); }
+    .slide-item.is-active .reveal-blur { opacity: 1; filter: blur(0); transform: scale(1); }
 
     /* Staggered Delays */
     .slide-item.is-active .delay-100 { transition-delay: 100ms; }
@@ -77,7 +79,7 @@
     .slide-item.is-active .delay-700 { transition-delay: 700ms; }
 
     /* Quick Exit */
-    .slide-item:not(.is-active) .reveal-up, .slide-item:not(.is-active) .reveal-left, .slide-item:not(.is-active) .reveal-right, .slide-item:not(.is-active) .reveal-scale { transition-delay: 0ms !important; transition-duration: 0.3s; opacity: 0; }
+    .slide-item:not(.is-active) .reveal-up, .slide-item:not(.is-active) .reveal-left, .slide-item:not(.is-active) .reveal-right, .slide-item:not(.is-active) .reveal-scale, .slide-item:not(.is-active) .reveal-blur { transition-delay: 0ms !important; transition-duration: 0.3s; opacity: 0; filter: none; }
   </style>
 </head>
 <body>
@@ -134,8 +136,9 @@
     <!-- SLIDE 01: TITLE -->
     <div class="slide-item is-active absolute inset-0 w-full min-h-screen transition-all duration-700 ease-modern opacity-100 z-20 pointer-events-auto bg-[#1A1A1A]">
       <div class="absolute inset-0 overflow-hidden">
-        <img src="https://images.unsplash.com/photo-1573164713988-8665fc963095?w=1920&q=100" class="w-full h-full object-cover opacity-50 animate-pan">
-        <div class="absolute inset-0 bg-gradient-to-r from-[#1A1A1A]/95 via-[#1A1A1A]/80 to-[#5B8DB8]/20"></div>
+        <img src="https://images.unsplash.com/photo-1573164713988-8665fc963095?w=1920&q=100" class="w-full h-full object-cover opacity-50 animate-pan" alt="Background">
+        <div class="absolute inset-0 bg-gradient-to-t from-[#1A1A1A] via-[#1A1A1A]/60 to-transparent"></div>
+        <div class="absolute inset-0 bg-gradient-to-r from-[#1A1A1A] via-[#1A1A1A]/80 to-transparent"></div>
       </div>
       
       <!-- Ambient Orbs & Floating Circles -->
@@ -165,7 +168,7 @@
       </div>
     </div>
 
-    <!-- SLIDE 02: OUR STORY (User's Updated Collage Layout) -->
+    <!-- SLIDE 02: OUR STORY (Collage Layout) -->
     <div class="slide-item absolute inset-0 w-full min-h-screen transition-all duration-700 ease-modern opacity-0 z-0 pointer-events-none bg-[#F8F7F4]">
       <div class="absolute inset-0 overflow-hidden pointer-events-none floating-circle print:hidden">
         <div class="absolute w-[300px] h-[300px] rounded-full border border-[#5B8DB8]/20 animate-float-slow" style="top:10%;left:-5%"></div>
@@ -177,13 +180,13 @@
         <div class="lg:col-span-5 h-full relative z-10 p-12 flex items-center justify-center reveal-right">
           <!-- Aesthetic Collage from User's Links -->
           <div class="relative w-full h-[80%]">
-            <div class="absolute top-0 right-0 w-[70%] h-[70%] rounded-3xl overflow-hidden shadow-2xl border-[6px] border-white z-10 hover:scale-105 transition-transform duration-500">
+            <div class="absolute top-0 right-0 w-[70%] h-[70%] rounded-3xl overflow-hidden shadow-2xl border-[6px] border-white z-10 hover:scale-105 transition-transform duration-500 bg-[#E5E3DE]">
               <img src="https://i.ibb.co/1GYtkyv2/Untitled-1.jpg?w=1080&q=100" class="w-full h-full object-cover">
             </div>
-            <div class="absolute bottom-10 left-0 w-[60%] h-[50%] rounded-3xl overflow-hidden shadow-2xl border-[6px] border-white z-20 hover:scale-105 transition-transform duration-500">
+            <div class="absolute bottom-10 left-0 w-[60%] h-[50%] rounded-3xl overflow-hidden shadow-2xl border-[6px] border-white z-20 hover:scale-105 transition-transform duration-500 bg-[#E5E3DE]">
               <img src="https://i.ibb.co/WpHwjkCz/Untitled-2.jpg?w=1080&q=100" class="w-full h-full object-cover">
             </div>
-            <div class="absolute bottom-0 right-10 w-[40%] h-[40%] rounded-3xl overflow-hidden shadow-2xl border-[6px] border-white z-30 hover:scale-105 transition-transform duration-500">
+            <div class="absolute bottom-0 right-10 w-[40%] h-[40%] rounded-3xl overflow-hidden shadow-2xl border-[6px] border-white z-30 hover:scale-105 transition-transform duration-500 bg-[#E5E3DE]">
               <img src="https://i.ibb.co/4ZTdJx9q/Untitled-3.jpg?w=800&q=100" class="w-full h-full object-cover">
             </div>
           </div>
@@ -234,14 +237,13 @@
         </div>
 
         <div class="relative h-full overflow-hidden reveal-right delay-200 hidden lg:block">
-          <!-- User's updated image link -->
           <img src="https://i.ibb.co/TD7nx1ky/presentation.jpg?w=1920&q=100" class="w-full h-full object-cover opacity-80">
-          <div class="absolute inset-0 bg-gradient-to-r from-[#1A1A1A] via-[#1A1A1A]/80 to-transparent"></div>
+          <div class="absolute inset-0 bg-gradient-to-r from-[#1A1A1A] via-transparent to-transparent"></div>
         </div>
       </div>
     </div>
 
-    <!-- SLIDE 04: WHAT WE DO (User's Updated Shoe Collage) -->
+    <!-- SLIDE 04: WHAT WE DO (Pixabay Shoe Collage) -->
     <div class="slide-item absolute inset-0 w-full min-h-screen transition-all duration-700 ease-modern opacity-0 z-0 pointer-events-none bg-[#F8F7F4]">
       <div class="absolute inset-0 overflow-hidden pointer-events-none floating-circle print:hidden">
         <div class="absolute w-[300px] h-[300px] rounded-full border border-[#5B8DB8]/20 animate-float-slow" style="top:10%;left:-5%"></div>
@@ -275,16 +277,16 @@
         <div class="lg:col-span-7 relative h-full flex items-center justify-center p-12 reveal-scale delay-200">
           <div class="relative w-full h-[85%]">
             <!-- Big Hero Image from User -->
-            <div class="absolute inset-0 rounded-[3rem] overflow-hidden shadow-2xl border-[8px] border-white z-10 hover:scale-[1.02] transition-transform duration-500">
+            <div class="absolute inset-0 rounded-[3rem] overflow-hidden shadow-2xl border-[8px] border-white z-10 hover:scale-[1.02] transition-transform duration-500 bg-[#E5E3DE]">
               <img src="https://i.ibb.co/WpRjMVGd/shutterstock-9380755-1.jpg" class="w-full h-full object-cover">
             </div>
             <!-- Floating Overlay Image 1 from User -->
-            <div class="absolute -top-6 -left-6 w-1/3 aspect-square rounded-3xl overflow-hidden shadow-2xl border-[6px] border-white z-20 hover:scale-110 transition-transform duration-500">
-              <img src="https://www.jmalogos.com/assets/poolLOGO-Js0zgDqw.png?w=800&q=100" class="w-full h-full object-cover">
+            <div class="absolute -top-6 -left-6 w-1/3 aspect-square rounded-3xl overflow-hidden shadow-2xl border-[6px] border-white z-20 hover:scale-110 transition-transform duration-500 bg-white">
+              <img src="https://www.jmalogos.com/assets/poolLOGO-Js0zgDqw.png?w=800&q=100" class="w-full h-full object-contain p-4">
             </div>
             <!-- Floating Overlay Image 2 from User -->
-            <div class="absolute -bottom-10 -right-10 w-[40%] aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl border-[6px] border-white z-20 hover:scale-110 transition-transform duration-500">
-              <img src="https://www.jmalogos.com/assets/headphonesLOGO-oAvyun4J.png?w=800&q=100" class="w-full h-full object-cover">
+            <div class="absolute -bottom-10 -right-10 w-[40%] aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl border-[6px] border-white z-20 hover:scale-110 transition-transform duration-500 bg-white">
+              <img src="https://www.jmalogos.com/assets/headphonesLOGO-oAvyun4J.png?w=800&q=100" class="w-full h-full object-contain p-4">
             </div>
           </div>
         </div>
@@ -294,7 +296,7 @@
     <!-- SLIDE 05: WHO WE ARE (Center Alignment) -->
     <div class="slide-item absolute inset-0 w-full min-h-screen transition-all duration-700 ease-modern opacity-0 z-0 pointer-events-none bg-[#1A1A1A]">
       <div class="w-full h-full flex flex-col relative z-10">
-        <!-- Top Image Collage Background from User code -->
+        <!-- Top Image Collage Background -->
         <div class="h-[55%] w-full relative reveal-up">
           <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=1920&q=100" class="w-full h-full object-cover opacity-60">
           <div class="absolute inset-0 bg-gradient-to-t from-[#1A1A1A] via-[#1A1A1A]/50 to-transparent"></div>
@@ -340,6 +342,7 @@
 
     <!-- SLIDE 06: END TO END -->
     <div class="slide-item absolute inset-0 w-full min-h-screen transition-all duration-700 ease-modern opacity-0 z-0 pointer-events-none bg-[#F8F7F4]">
+      <!-- Animated Floating Elements -->
       <div class="absolute inset-0 overflow-hidden pointer-events-none print:hidden">
         <div class="absolute w-[400px] h-[400px] rounded-full bg-[#5B8DB8]/10 blur-[80px] animate-float-slow" style="top:10%;left:5%"></div>
         <div class="absolute w-[500px] h-[500px] rounded-full bg-[#5B8DB8]/5 blur-[100px] animate-float-medium" style="bottom:10%;right:5%"></div>
@@ -420,25 +423,33 @@
         </div>
         
         <div class="lg:col-span-7 relative reveal-right delay-200">
+          <!-- Giant Laptop Breakout -->
           <div class="absolute inset-0 bg-[#5B8DB8]/20 blur-[100px] rounded-full scale-150 -z-10"></div>
           
-          <div class="relative w-[120%] -ml-[10%] aspect-[16/10] bg-white rounded-t-3xl rounded-b-md shadow-[0_0_80px_rgba(0,0,0,0.8)] border-[8px] border-[#2A2A2A] overflow-hidden group">
-            <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1920&q=100" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-            <div class="absolute top-0 left-0 w-full h-6 bg-[#2A2A2A] flex items-center px-3 gap-2">
-              <div class="w-2.5 h-2.5 rounded-full bg-red-500"></div>
-              <div class="w-2.5 h-2.5 rounded-full bg-yellow-500"></div>
-              <div class="w-2.5 h-2.5 rounded-full bg-green-500"></div>
+          <!-- Mockup with Macbook border style as requested -->
+          <div class="relative w-[120%] -ml-[10%] aspect-[16/10] bg-[#1A1A1A] rounded-t-2xl rounded-b-none border-[12px] border-[#2A2A2A] border-b-0 overflow-hidden group z-10">
+            <div class="absolute top-0 left-0 w-full h-8 bg-[#2A2A2A] flex items-center px-4 gap-2 z-20">
+              <div class="w-2.5 h-2.5 rounded-full bg-[#ff5f56]"></div>
+              <div class="w-2.5 h-2.5 rounded-full bg-[#ffbd2e]"></div>
+              <div class="w-2.5 h-2.5 rounded-full bg-[#27c93f]"></div>
             </div>
-            
-            <div class="absolute bottom-10 left-10 bg-white/90 backdrop-blur-md p-4 rounded-xl shadow-2xl flex items-center gap-4 border border-white group-hover:-translate-y-2 transition-transform duration-500">
-              <div class="w-10 h-10 bg-[#5B8DB8] rounded-full flex items-center justify-center text-white"><i class="fa-solid fa-chart-pie"></i></div>
-              <div>
-                <p class="text-xs text-[#666666] font-bold uppercase tracking-wider">Engagement</p>
-                <p class="text-xl font-extrabold text-[#1A1A1A]">+84.2%</p>
+            <div class="absolute top-8 left-0 w-full h-[calc(100%-2rem)]">
+              <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1920&q=100" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+              
+              <!-- Floating UI Element -->
+              <div class="absolute bottom-6 left-6 bg-white/90 backdrop-blur-md p-4 rounded-xl shadow-2xl flex items-center gap-4 border border-white group-hover:-translate-y-2 transition-transform duration-500">
+                <div class="w-10 h-10 bg-[#5B8DB8] rounded-full flex items-center justify-center text-white"><i class="fa-solid fa-chart-pie"></i></div>
+                <div>
+                  <p class="text-xs text-[#666666] font-bold uppercase tracking-wider">Engagement</p>
+                  <p class="text-xl font-extrabold text-[#1A1A1A]">+84.2%</p>
+                </div>
               </div>
             </div>
           </div>
-          <div class="w-[130%] h-4 bg-gradient-to-b from-[#444] to-[#222] mx-auto rounded-b-xl shadow-2xl -ml-[15%]"></div>
+          <!-- Base/Lip -->
+          <div class="w-[125%] h-4 bg-[#333] mx-auto rounded-b-2xl shadow-[0_20px_50px_rgba(0,0,0,0.5)] -ml-[12.5%] relative z-20 border-t border-[#444]">
+            <div class="absolute top-0 left-1/2 -translate-x-1/2 w-1/5 h-1.5 bg-[#1A1A1A] rounded-b-md opacity-50"></div>
+          </div>
         </div>
       </div>
     </div>
@@ -446,6 +457,7 @@
     <!-- NEW SLIDE 08: STOREFRONT ECOSYSTEM -->
     <div class="slide-item absolute inset-0 w-full min-h-screen transition-all duration-700 ease-modern opacity-0 z-0 pointer-events-none bg-[#F8F7F4]">
       <div class="w-full h-full grid lg:grid-cols-12 relative z-10">
+        
         <div class="lg:col-span-5 relative h-full hidden lg:block overflow-hidden reveal-right">
           <img src="https://images.unsplash.com/photo-1600132806370-bf17e65e942f?w=1920&q=100" class="w-full h-full object-cover">
           <div class="absolute inset-0 bg-gradient-to-r from-transparent to-[#F8F7F4]"></div>
@@ -491,15 +503,15 @@
           <p class="text-xl text-[#666666] leading-relaxed mb-8 font-light">Centralized, always-on hubs for your brand.</p>
           
           <div class="space-y-4">
-            <div class="flex items-start gap-4">
+            <div class="flex items-start gap-4 bg-white p-4 rounded-xl shadow-sm border border-gray-100">
               <i class="fa-solid fa-check text-[#5B8DB8] mt-1.5"></i>
               <p class="text-[#1A1A1A] font-medium leading-relaxed">Create a unified shopping experience for employees globally.</p>
             </div>
-            <div class="flex items-start gap-4">
+            <div class="flex items-start gap-4 bg-white p-4 rounded-xl shadow-sm border border-gray-100">
               <i class="fa-solid fa-check text-[#5B8DB8] mt-1.5"></i>
               <p class="text-[#1A1A1A] font-medium leading-relaxed">Streamline uniform ordering with tailored allowances.</p>
             </div>
-            <div class="flex items-start gap-4">
+            <div class="flex items-start gap-4 bg-white p-4 rounded-xl shadow-sm border border-gray-100">
               <i class="fa-solid fa-check text-[#5B8DB8] mt-1.5"></i>
               <p class="text-[#1A1A1A] font-medium leading-relaxed">Maintain strict brand compliance across all merchandise.</p>
             </div>
@@ -507,44 +519,53 @@
         </div>
         
         <div class="relative reveal-left delay-300">
-          <div class="w-full aspect-[4/3] bg-white rounded-3xl shadow-2xl border-[8px] border-white overflow-hidden relative group hover:-translate-y-2 transition-transform duration-500">
-            <!-- E-commerce clothing grid image -->
-            <img src="https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?w=1920&q=100" class="w-full h-full object-cover">
-            
-            <!-- Mock UI Elements -->
-            <div class="absolute top-4 left-4 right-4 h-12 bg-white/90 backdrop-blur-md rounded-xl flex items-center justify-between px-4 shadow-sm border border-black/5">
-              <div class="w-24 h-4 bg-gray-200 rounded"></div>
-              <div class="flex gap-2">
-                <div class="w-16 h-4 bg-gray-200 rounded"></div>
-                <div class="w-16 h-4 bg-gray-200 rounded"></div>
+          <div class="relative w-full max-w-xl mx-auto">
+            <!-- Screen -->
+            <div class="relative w-full aspect-[16/10] bg-[#1A1A1A] rounded-t-2xl border-[8px] border-[#2A2A2A] border-b-0 overflow-hidden group z-10">
+              <!-- Browser Top Bar -->
+              <div class="absolute top-0 left-0 w-full h-8 bg-[#2A2A2A] flex items-center px-4 gap-2 z-20">
+                <div class="w-3 h-3 rounded-full bg-[#ff5f56]"></div>
+                <div class="w-3 h-3 rounded-full bg-[#ffbd2e]"></div>
+                <div class="w-3 h-3 rounded-full bg-[#27c93f]"></div>
+              </div>
+              <!-- Content Area -->
+              <div class="absolute top-8 left-0 w-full h-[calc(100%-2rem)]">
+                <img src="https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?w=1920&q=100" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                <div class="absolute top-4 left-4 right-4 h-12 bg-white/90 backdrop-blur-md rounded-xl flex items-center justify-between px-4 shadow-sm border border-black/5">
+                  <div class="w-24 h-4 bg-gray-200 rounded"></div>
+                  <div class="flex gap-2">
+                    <div class="w-16 h-4 bg-gray-200 rounded"></div>
+                    <div class="w-16 h-4 bg-gray-200 rounded"></div>
+                  </div>
+                </div>
               </div>
             </div>
-            <div class="absolute top-20 left-4 w-32 bg-white/90 backdrop-blur-md rounded-xl p-4 shadow-sm border border-black/5">
-              <div class="w-16 h-3 bg-gray-300 rounded mb-4"></div>
-              <div class="space-y-2">
-                <div class="w-20 h-2 bg-gray-200 rounded"></div>
-                <div class="w-16 h-2 bg-gray-200 rounded"></div>
-                <div class="w-24 h-2 bg-gray-200 rounded"></div>
-                <div class="w-12 h-2 bg-gray-200 rounded"></div>
-              </div>
+            <!-- Base/Lip -->
+            <div class="w-[110%] h-4 bg-[#333333] mx-auto rounded-b-2xl shadow-[0_20px_50px_rgba(0,0,0,0.5)] -ml-[5%] relative z-20 border-t border-[#444]">
+              <!-- Trackpad notch -->
+              <div class="absolute top-0 left-1/2 -translate-x-1/2 w-1/5 h-1.5 bg-[#1A1A1A] rounded-b-md opacity-50"></div>
             </div>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- NEW SLIDE 10: POP-UP STORES -->
+    <!-- NEW SLIDE 10: POP-UP STORES (Tablet Mockup) -->
     <div class="slide-item absolute inset-0 w-full min-h-screen transition-all duration-700 ease-modern opacity-0 z-0 pointer-events-none bg-[#1A1A1A]">
       <div class="w-full h-full grid lg:grid-cols-2 relative z-10 max-w-7xl mx-auto px-8 md:px-16 items-center gap-16">
         
-        <div class="relative reveal-right delay-300 hidden lg:block">
-          <div class="w-2/3 aspect-[9/16] bg-[#2A2A2A] rounded-[2.5rem] shadow-[0_0_60px_rgba(91,141,184,0.3)] border-[8px] border-[#333] overflow-hidden relative group hover:scale-105 transition-transform mx-auto">
-            <!-- Mobile shopping trendy image -->
-            <img src="https://images.unsplash.com/photo-1607083206968-13611e3d76db?w=1080&q=100" class="w-full h-full object-cover">
+        <div class="relative reveal-right delay-300 hidden lg:block w-full max-w-sm mx-auto">
+          <!-- iPad / Tablet Style Mockup -->
+          <div class="w-full aspect-[3/4] bg-[#1A1A1A] rounded-[2rem] shadow-[0_20px_60px_rgba(0,0,0,0.6)] border-[12px] border-[#2A2A2A] overflow-hidden relative group hover:scale-105 transition-transform">
+            <!-- Front Camera -->
+            <div class="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-6 bg-[#2A2A2A] rounded-b-2xl z-20 flex justify-center items-end pb-1.5">
+              <div class="w-2 h-2 rounded-full bg-black"></div>
+            </div>
             
-            <!-- Mock Mobile UI -->
-            <div class="absolute bottom-0 w-full h-24 bg-gradient-to-t from-black to-transparent flex items-end justify-center pb-6">
-              <div class="w-3/4 h-12 bg-[#5B8DB8] rounded-full flex items-center justify-center text-white font-bold text-sm shadow-lg">SHOP DROP</div>
+            <img src="https://images.unsplash.com/photo-1607083206968-13611e3d76db?w=1080&q=100" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+            
+            <div class="absolute bottom-0 w-full h-24 bg-gradient-to-t from-black to-transparent flex items-end justify-center pb-6 z-10">
+              <div class="w-3/4 h-12 bg-[#5B8DB8] rounded-full flex items-center justify-center text-white font-bold text-sm shadow-lg hover:bg-white hover:text-[#5B8DB8] transition-colors cursor-pointer">SHOP DROP</div>
             </div>
           </div>
         </div>
@@ -552,18 +573,18 @@
         <div class="reveal-left">
           <h3 class="text-[#5B8DB8] font-bold tracking-[0.3em] uppercase text-sm mb-4">Storefront Focus</h3>
           <h2 class="text-5xl lg:text-6xl font-extrabold text-white mb-6 leading-tight tracking-tight">POP-UP & EVENT STORES</h2>
-          <p class="text-xl text-white/70 leading-relaxed mb-8 font-light">High-impact, time-sensitive microsites.</p>
+          <p class="text-xl text-white/70 leading-relaxed mb-8 font-light border-l-4 border-[#5B8DB8] pl-6">High-impact, time-sensitive microsites.</p>
           
           <div class="space-y-4">
-            <div class="flex items-start gap-4">
+            <div class="bento-card p-5 flex items-start gap-4">
               <i class="fa-solid fa-bolt text-[#5B8DB8] mt-1.5"></i>
               <p class="text-white font-medium leading-relaxed">Build hype with exclusive merchandise drops.</p>
             </div>
-            <div class="flex items-start gap-4">
+            <div class="bento-card p-5 flex items-start gap-4">
               <i class="fa-solid fa-bolt text-[#5B8DB8] mt-1.5"></i>
               <p class="text-white font-medium leading-relaxed">Perfect for conferences, off-sites, and seasonal events.</p>
             </div>
-            <div class="flex items-start gap-4">
+            <div class="bento-card p-5 flex items-start gap-4">
               <i class="fa-solid fa-bolt text-[#5B8DB8] mt-1.5"></i>
               <p class="text-white font-medium leading-relaxed">Mobile-optimized for seamless on-the-go purchasing.</p>
             </div>
@@ -579,18 +600,18 @@
         <div class="reveal-right">
           <h3 class="text-[#5B8DB8] font-bold tracking-[0.3em] uppercase text-sm mb-4">Storefront Focus</h3>
           <h2 class="text-5xl lg:text-6xl font-extrabold text-[#1A1A1A] mb-6 leading-tight tracking-tight">REWARDS & REDEMPTION</h2>
-          <p class="text-xl text-[#666666] leading-relaxed mb-8 font-light">Frictionless platforms for employee appreciation and incentive fulfillment.</p>
+          <p class="text-xl text-[#666666] leading-relaxed mb-8 font-light border-l-4 border-[#5B8DB8] pl-6">Frictionless platforms for employee appreciation and incentive fulfillment.</p>
           
           <div class="space-y-4">
-            <div class="flex items-start gap-4">
+            <div class="bg-white p-4 rounded-xl shadow-sm border border-gray-100 flex items-start gap-4">
               <i class="fa-solid fa-gift text-[#5B8DB8] mt-1.5"></i>
               <p class="text-[#1A1A1A] font-medium leading-relaxed">Points-based checkout systems for seamless reward claims.</p>
             </div>
-            <div class="flex items-start gap-4">
+            <div class="bg-white p-4 rounded-xl shadow-sm border border-gray-100 flex items-start gap-4">
               <i class="fa-solid fa-gift text-[#5B8DB8] mt-1.5"></i>
               <p class="text-[#1A1A1A] font-medium leading-relaxed">Automate gifting for anniversaries, holidays, and milestones.</p>
             </div>
-            <div class="flex items-start gap-4">
+            <div class="bg-white p-4 rounded-xl shadow-sm border border-gray-100 flex items-start gap-4">
               <i class="fa-solid fa-gift text-[#5B8DB8] mt-1.5"></i>
               <p class="text-[#1A1A1A] font-medium leading-relaxed">Curated premium gifts driving meaningful engagement.</p>
             </div>
@@ -598,14 +619,29 @@
         </div>
         
         <div class="relative reveal-left delay-300">
-          <div class="w-full aspect-[4/3] bg-white rounded-3xl shadow-2xl border-[8px] border-white overflow-hidden relative group hover:-translate-y-2 transition-transform duration-500">
-            <!-- Gifts image -->
-            <img src="https://images.unsplash.com/photo-1513118172236-00b7cc57e1fa?w=1920&q=100" class="w-full h-full object-cover">
-            
-            <!-- Mock UI Overlay -->
-            <div class="absolute bottom-6 right-6 bg-white/90 backdrop-blur-md rounded-xl p-5 shadow-xl border border-black/5 text-center">
-              <p class="text-xs text-[#666666] font-bold uppercase tracking-wider mb-1">Your Balance</p>
-              <p class="text-3xl font-extrabold text-[#5B8DB8]">2,500 <span class="text-sm text-[#1A1A1A]">pts</span></p>
+           <div class="relative w-full max-w-xl mx-auto">
+            <!-- Screen -->
+            <div class="relative w-full aspect-[16/10] bg-[#1A1A1A] rounded-t-2xl border-[8px] border-[#2A2A2A] border-b-0 overflow-hidden group z-10">
+              <!-- Browser Top Bar -->
+              <div class="absolute top-0 left-0 w-full h-8 bg-[#2A2A2A] flex items-center px-4 gap-2 z-20">
+                <div class="w-3 h-3 rounded-full bg-[#ff5f56]"></div>
+                <div class="w-3 h-3 rounded-full bg-[#ffbd2e]"></div>
+                <div class="w-3 h-3 rounded-full bg-[#27c93f]"></div>
+              </div>
+              <!-- Content Area -->
+              <div class="absolute top-8 left-0 w-full h-[calc(100%-2rem)]">
+                <img src="https://images.unsplash.com/photo-1513118172236-00b7cc57e1fa?w=1920&q=100" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                <!-- Floating UI Overlay -->
+                <div class="absolute bottom-6 right-6 bg-white/90 backdrop-blur-md rounded-xl p-5 shadow-xl border border-black/5 text-center group-hover:-translate-y-2 transition-transform">
+                  <p class="text-xs text-[#666666] font-bold uppercase tracking-wider mb-1">Your Balance</p>
+                  <p class="text-3xl font-extrabold text-[#5B8DB8]">2,500 <span class="text-sm text-[#1A1A1A]">pts</span></p>
+                </div>
+              </div>
+            </div>
+            <!-- Base/Lip -->
+            <div class="w-[110%] h-4 bg-[#333333] mx-auto rounded-b-2xl shadow-[0_20px_50px_rgba(0,0,0,0.5)] -ml-[5%] relative z-20 border-t border-[#444]">
+              <!-- Trackpad notch -->
+              <div class="absolute top-0 left-1/2 -translate-x-1/2 w-1/5 h-1.5 bg-[#1A1A1A] rounded-b-md opacity-50"></div>
             </div>
           </div>
         </div>
@@ -647,12 +683,28 @@
         </div>
         
         <div class="lg:col-span-6 relative reveal-right delay-200">
-          <div class="relative w-full aspect-[4/5] bg-white rounded-3xl shadow-[0_0_50px_rgba(91,141,184,0.3)] border border-white/20 overflow-hidden group">
-            <img src="https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?w=1920&q=100" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-            <!-- Glass Mock UI on top of image -->
-            <div class="absolute bottom-6 left-6 right-6 glass-panel p-4 rounded-xl flex items-center justify-between">
-              <span class="text-white font-bold text-sm uppercase tracking-widest">Add to Cart</span>
-              <i class="fa-solid fa-arrow-right text-white"></i>
+           <div class="relative w-full max-w-xl mx-auto">
+            <!-- Screen -->
+            <div class="relative w-full aspect-[16/10] bg-[#1A1A1A] rounded-t-2xl border-[8px] border-[#2A2A2A] border-b-0 overflow-hidden group z-10">
+              <!-- Browser Top Bar -->
+              <div class="absolute top-0 left-0 w-full h-8 bg-[#2A2A2A] flex items-center px-4 gap-2 z-20">
+                <div class="w-3 h-3 rounded-full bg-[#ff5f56]"></div>
+                <div class="w-3 h-3 rounded-full bg-[#ffbd2e]"></div>
+                <div class="w-3 h-3 rounded-full bg-[#27c93f]"></div>
+              </div>
+              <!-- Content Area -->
+              <div class="absolute top-8 left-0 w-full h-[calc(100%-2rem)]">
+                <img src="https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?w=1920&q=100" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                <div class="absolute bottom-6 left-6 right-6 bg-black/60 backdrop-blur-md p-4 rounded-xl flex items-center justify-between border border-white/20 group-hover:-translate-y-1 transition-transform">
+                  <span class="text-white font-bold text-sm uppercase tracking-widest">Add to Cart</span>
+                  <i class="fa-solid fa-arrow-right text-white"></i>
+                </div>
+              </div>
+            </div>
+            <!-- Base/Lip -->
+            <div class="w-[110%] h-4 bg-[#333333] mx-auto rounded-b-2xl shadow-[0_20px_50px_rgba(0,0,0,0.5)] -ml-[5%] relative z-20 border-t border-[#444]">
+              <!-- Trackpad notch -->
+              <div class="absolute top-0 left-1/2 -translate-x-1/2 w-1/5 h-1.5 bg-[#1A1A1A] rounded-b-md opacity-50"></div>
             </div>
           </div>
         </div>
@@ -753,13 +805,29 @@
         <h2 class="text-5xl lg:text-6xl font-extrabold text-white mb-16 text-center tracking-tight reveal-up">PORTAL IN ACTION</h2>
         
         <div class="relative w-full h-[60vh] max-h-[600px]">
-          <div class="absolute top-0 left-0 w-[70%] h-[80%] bg-[#2A2A2A] rounded-3xl overflow-hidden shadow-2xl reveal-right delay-200 border-4 border-white/10 group">
-            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1920&q=100" class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-700">
+          <!-- Back Window -->
+          <div class="absolute top-0 left-0 w-[70%] h-[80%] bg-[#1A1A1A] rounded-2xl overflow-hidden shadow-2xl reveal-right delay-200 border-[4px] border-[#2A2A2A] group flex flex-col">
+            <div class="w-full h-6 bg-[#2A2A2A] flex items-center px-3 gap-2 flex-shrink-0">
+              <div class="w-2 h-2 rounded-full bg-[#ff5f56]"></div>
+              <div class="w-2 h-2 rounded-full bg-[#ffbd2e]"></div>
+              <div class="w-2 h-2 rounded-full bg-[#27c93f]"></div>
+            </div>
+            <div class="relative w-full h-full overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1920&q=100" class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-700">
+            </div>
           </div>
           
-          <div class="absolute bottom-0 right-0 w-[60%] h-[70%] bg-[#1A1A1A] rounded-3xl overflow-hidden shadow-[0_30px_60px_rgba(0,0,0,0.8)] reveal-left delay-400 border-4 border-[#5B8DB8] group">
-            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1920&q=100" class="w-full h-full object-cover opacity-90 group-hover:scale-105 transition-transform duration-700">
-            <div class="absolute top-6 left-6 bg-[#5B8DB8] text-white px-4 py-2 rounded-full font-bold tracking-widest text-xs uppercase shadow-lg">Live Dashboard</div>
+          <!-- Front Window -->
+          <div class="absolute bottom-0 right-0 w-[60%] h-[70%] bg-[#1A1A1A] rounded-2xl overflow-hidden shadow-[0_30px_60px_rgba(0,0,0,0.8)] reveal-left delay-400 border-[4px] border-[#2A2A2A] group flex flex-col">
+             <div class="w-full h-6 bg-[#2A2A2A] flex items-center px-3 gap-2 flex-shrink-0">
+              <div class="w-2 h-2 rounded-full bg-[#ff5f56]"></div>
+              <div class="w-2 h-2 rounded-full bg-[#ffbd2e]"></div>
+              <div class="w-2 h-2 rounded-full bg-[#27c93f]"></div>
+            </div>
+            <div class="relative w-full h-full overflow-hidden">
+               <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1920&q=100" class="w-full h-full object-cover opacity-90 group-hover:scale-105 transition-transform duration-700">
+               <div class="absolute top-4 left-4 bg-[#5B8DB8] text-white px-3 py-1.5 rounded-full font-bold tracking-widest text-[10px] uppercase shadow-lg">Live Dashboard</div>
+            </div>
           </div>
         </div>
       </div>
@@ -890,7 +958,7 @@
               <img src="https://images.unsplash.com/photo-1549465220-1a8b9238cd48?w=1920&q=100" class="w-full h-full object-cover" alt="Custom Packaging">
             </div>
             <div class="absolute -bottom-10 -left-10 w-[60%] aspect-square rounded-3xl overflow-hidden shadow-2xl border-[6px] border-white z-20 hover:scale-110 transition-transform duration-500">
-              <img src="https://instagram.fcrk3-3.fna.fbcdn.net/v/t51.82787-15/690311927_18597149866024145_8642498146654590202_n.jpg?stp=dst-jpg_e35_p1080x1080_tt6&_nc_cat=111&ig_cache_key=Mzg5NjIxOTc4MzY1NzgwNjUyMQ%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMTQ0MC5zZHIucmVndWxhcl9waG90by5DMyJ9&_nc_ohc=tQZYXKBATrcQ7kNvwHs8jC3&_nc_oc=AdplOTU0XLtuQRIQkH-GJfsyXMySnEUGmBxCPPe87gkAL95p7XvAWWHbwWGdFlFu5uo&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=instagram.fcrk3-3.fna&_nc_gid=8zXsFOcloNgQXGblHqOasA&_nc_ss=7a22e&oh=00_Af4bJxh66VtNb28WFqUsOMLEJVAZsJ9GtyzZ4AWPDcYF4A&oe=6A125311" class="w-full h-full object-cover">
+              <img src="https://images.unsplash.com/photo-1607083206968-13611e3d76db?w=800&q=100" class="w-full h-full object-cover">
             </div>
           </div>
         </div>
@@ -962,46 +1030,55 @@
         <h2 class="text-5xl lg:text-6xl font-extrabold mb-12 text-center tracking-tight text-white reveal-up">POWER YOUR BRAND VOICE</h2>
         
         <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 reveal-up delay-200">
-          <div class="bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-3xl hover:bg-white/20 transition-all duration-300 shadow-xl group">
+          
+          <div class="bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-3xl hover:bg-white/20 transition-all duration-300 shadow-xl group hover:-translate-y-2">
             <i class="fa-solid fa-users-gear text-3xl text-white mb-4 group-hover:scale-110 transition-transform"></i>
             <h4 class="font-bold text-lg mb-2">Account Management</h4>
             <p class="text-sm text-white/80 font-light leading-relaxed">Dedicated experts providing end-to-end guidance, ensuring your campaigns are perfectly executed.</p>
           </div>
-          <div class="bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-3xl hover:bg-white/20 transition-all duration-300 shadow-xl group">
+          
+          <div class="bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-3xl hover:bg-white/20 transition-all duration-300 shadow-xl group hover:-translate-y-2">
             <i class="fa-solid fa-shirt text-3xl text-white mb-4 group-hover:scale-110 transition-transform"></i>
             <h4 class="font-bold text-lg mb-2">Merchandising</h4>
             <p class="text-sm text-white/80 font-light leading-relaxed">Strategic product curation aligning with modern retail trends to elevate your brand perception.</p>
           </div>
-          <div class="bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-3xl hover:bg-white/20 transition-all duration-300 shadow-xl group">
+
+          <div class="bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-3xl hover:bg-white/20 transition-all duration-300 shadow-xl group hover:-translate-y-2">
             <i class="fa-solid fa-wand-magic-sparkles text-3xl text-white mb-4 group-hover:scale-110 transition-transform"></i>
             <h4 class="font-bold text-lg mb-2">Creative Services</h4>
             <p class="text-sm text-white/80 font-light leading-relaxed">In-house design specialists delivering custom mockups, packaging, and innovative brand concepts.</p>
           </div>
-          <div class="bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-3xl hover:bg-white/20 transition-all duration-300 shadow-xl group">
+
+          <div class="bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-3xl hover:bg-white/20 transition-all duration-300 shadow-xl group hover:-translate-y-2">
             <i class="fa-solid fa-bullhorn text-3xl text-white mb-4 group-hover:scale-110 transition-transform"></i>
             <h4 class="font-bold text-lg mb-2">Product Voice</h4>
             <p class="text-sm text-white/80 font-light leading-relaxed">Crafting meaningful narratives around every item to ensure it resonates deeply with your audience.</p>
           </div>
-          <div class="bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-3xl hover:bg-white/20 transition-all duration-300 shadow-xl group">
+
+          <div class="bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-3xl hover:bg-white/20 transition-all duration-300 shadow-xl group hover:-translate-y-2">
             <i class="fa-solid fa-comments text-3xl text-white mb-4 group-hover:scale-110 transition-transform"></i>
             <h4 class="font-bold text-lg mb-2">Communication</h4>
             <p class="text-sm text-white/80 font-light leading-relaxed">Transparent, proactive updates throughout the production lifecycle to keep your team informed.</p>
           </div>
-          <div class="bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-3xl hover:bg-white/20 transition-all duration-300 shadow-xl group">
+
+          <div class="bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-3xl hover:bg-white/20 transition-all duration-300 shadow-xl group hover:-translate-y-2">
             <i class="fa-solid fa-calendar-check text-3xl text-white mb-4 group-hover:scale-110 transition-transform"></i>
             <h4 class="font-bold text-lg mb-2">Event Support</h4>
             <p class="text-sm text-white/80 font-light leading-relaxed">Comprehensive planning and logistics coordination for flawless physical and virtual event activations.</p>
           </div>
-          <div class="bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-3xl hover:bg-white/20 transition-all duration-300 shadow-xl group">
+
+          <div class="bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-3xl hover:bg-white/20 transition-all duration-300 shadow-xl group hover:-translate-y-2">
             <i class="fa-solid fa-microchip text-3xl text-white mb-4 group-hover:scale-110 transition-transform"></i>
             <h4 class="font-bold text-lg mb-2">Technology</h4>
             <p class="text-sm text-white/80 font-light leading-relaxed">Proprietary digital storefronts, inventory tracking, and seamless procurement integrations.</p>
           </div>
-          <div class="bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-3xl hover:bg-white/20 transition-all duration-300 shadow-xl group">
+
+          <div class="bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-3xl hover:bg-white/20 transition-all duration-300 shadow-xl group hover:-translate-y-2">
             <i class="fa-solid fa-star text-3xl text-white mb-4 group-hover:scale-110 transition-transform"></i>
             <h4 class="font-bold text-lg mb-2">All The Extras</h4>
             <p class="text-sm text-white/80 font-light leading-relaxed">From eco-friendly sourcing to white-glove delivery, we provide the finishing touches that matter.</p>
           </div>
+
         </div>
       </div>
     </div>

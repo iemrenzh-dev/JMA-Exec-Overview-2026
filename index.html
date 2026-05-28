@@ -1298,53 +1298,148 @@
 
       // Export Script
       window.exportDeck = async function(format) {
-        downloadMenu.classList.add('opacity-0', 'pointer-events-none', 'translate-y-[-10px]');
-        const originalHtml = downloadBtn.innerHTML;
-        downloadBtn.innerHTML = `<i class="fa-solid fa-spinner fa-spin text-white"></i>`;
+        downloadMenu.classList.add('opacity-0','pointer-events-none','translate-y-[-10px]');
+        const origBtn = downloadBtn.innerHTML;
         downloadBtn.disabled = true;
+        downloadBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin text-white"></i>';
 
-        const freezeStyle = document.createElement('style');
-        freezeStyle.innerHTML = `* { transition: none !important; animation: none !important; transform: none !important; } .reveal-up, .reveal-left, .reveal-right, .reveal-scale, .reveal-blur { opacity: 1 !important; transform: translate(0,0) scale(1) !important; filter: none !important; } .noise-overlay, .floating-circle { display: none !important; }`;
-        document.head.appendChild(freezeStyle);
+        // Progress overlay
+        const overlay = document.createElement('div');
+        overlay.style.cssText = 'position:fixed;inset:0;z-index:99999;background:rgba(0,0,0,0.88);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;font-family:Inter,sans-serif;pointer-events:all';
+        overlay.innerHTML = `
+          <style>@keyframes sp{to{transform:rotate(360deg)}}</style>
+          <svg style="width:40px;height:40px;animation:sp 1s linear infinite" viewBox="0 0 24 24" fill="none" stroke-width="2.5">
+            <circle cx="12" cy="12" r="10" stroke="rgba(255,255,255,0.12)"/>
+            <path d="M12 2a10 10 0 0 1 10 10" stroke="#5B8DB8" stroke-linecap="round"/>
+          </svg>
+          <div id="ep-title" style="color:#fff;font-size:15px;font-weight:600">Preparing...</div>
+          <div style="width:280px;height:4px;background:rgba(255,255,255,0.08);border-radius:99px;overflow:hidden">
+            <div id="ep-bar" style="height:100%;width:0%;background:#5B8DB8;border-radius:99px;transition:width .3s ease"></div>
+          </div>
+          <div id="ep-sub" style="color:rgba(255,255,255,0.4);font-size:12px">Starting...</div>`;
+        document.body.appendChild(overlay);
 
-        const currentActive = currentSlide;
-        const { jsPDF } = window.jspdf;
-        let pdf = format === 'pdf' ? new jsPDF('landscape', 'mm', 'a4') : null;
-        let pptx = format === 'pptx' ? new PptxGenJS() : null;
-        if (pptx) pptx.layout = 'LAYOUT_16x9';
-
-        try {
-            for (let i = 0; i < slides.length; i++) {
-                slides.forEach(s => { s.classList.remove('opacity-100', 'z-20'); s.classList.add('opacity-0', 'z-0'); });
-                slides[i].classList.remove('opacity-0', 'z-0'); slides[i].classList.add('opacity-100', 'z-20');
-                await new Promise(r => setTimeout(r, 200)); 
-                
-                const canvas = await html2canvas(slides[i], { scale: 2, useCORS: true, logging: false, allowTaint: true });
-                const imgData = canvas.toDataURL('image/jpeg', 0.98);
-
-                if (format === 'pdf') {
-                    if (i > 0) pdf.addPage();
-                    const pdfWidth = 297; 
-                    const pdfHeight = (canvas.height * pdfWidth) / canvas.width;
-                    const yOffset = (210 - pdfHeight) / 2; 
-                    pdf.addImage(imgData, 'JPEG', 0, yOffset, pdfWidth, pdfHeight);
-                } else {
-                    let slidePptx = pptx.addSlide();
-                    slidePptx.addImage({ data: imgData, x: 0, y: 0, w: '100%', h: '100%' });
-                }
-            }
-
-            if (format === 'pdf') pdf.save('JMA_2.0_Elevating_Promo_Marketing.pdf');
-            else await pptx.writeFile({ fileName: 'JMA_2.0_Elevating_Promo_Marketing.pptx' });
-
-        } catch(e) {
-            console.error('Export Error:', e);
-            alert('Something went wrong during export. Please check console.');
+        function prog(pct, title, sub) {
+          document.getElementById('ep-bar').style.width = pct + '%';
+          if (title) document.getElementById('ep-title').textContent = title;
+          if (sub !== undefined) document.getElementById('ep-sub').textContent = sub;
         }
 
-        document.head.removeChild(freezeStyle);
-        window.goToSlide(currentActive, true); 
-        downloadBtn.innerHTML = originalHtml;
+        await document.fonts.ready;
+        const savedSlide = currentSlide;
+
+        // All animated entry class names in this deck
+        const SCOPED = ['reveal-up','reveal-left','reveal-right','reveal-scale','reveal-blur'];
+
+        const FREEZE = `
+          *,*::before,*::after{transition:none!important;animation:none!important;animation-delay:0ms!important;transition-delay:0ms!important;}
+          body,html{background:transparent!important;margin:0!important;padding:0!important;}
+          #global-ui{display:none!important;}
+          .noise-overlay{display:none!important;}
+          .h-screen{height:1080px!important;}
+          .min-h-screen{min-height:1080px!important;}
+          .slide-item{width:1920px!important;height:1080px!important;min-height:1080px!important;max-height:1080px!important;overflow:hidden!important;}
+          .slide-item>div{max-height:1080px!important;overflow:hidden!important;}
+        `;
+
+        function showEl(el) {
+          el.style.setProperty('opacity','1','important');
+          el.style.setProperty('transform','none','important');
+          el.style.setProperty('filter','none','important');
+          el.style.setProperty('visibility','visible','important');
+          el.style.setProperty('transition','none','important');
+          el.style.setProperty('animation','none','important');
+        }
+
+        // Fix gradient text spans only — never touch background-gradient buttons/divs
+        function fixGradientText(doc) {
+          doc.querySelectorAll('span.bg-clip-text, span.text-transparent').forEach(el => {
+            el.style.setProperty('color','#5B8DB8','important');
+            el.style.setProperty('-webkit-text-fill-color','#5B8DB8','important');
+            el.style.setProperty('background-image','none','important');
+            el.style.setProperty('background-clip','unset','important');
+            el.style.setProperty('-webkit-background-clip','unset','important');
+          });
+        }
+
+        function fixClone(doc) {
+          const s = doc.createElement('style');
+          s.textContent = FREEZE;
+          doc.head.appendChild(s);
+          SCOPED.forEach(c => doc.querySelectorAll('.'+c).forEach(showEl));
+          fixGradientText(doc);
+          const ui = doc.getElementById('global-ui');
+          if (ui) ui.style.display = 'none';
+          const noise = doc.querySelector('.noise-overlay');
+          if (noise) noise.style.display = 'none';
+        }
+
+        prog(2,'Preparing...','');
+
+        const pptx = new PptxGenJS();
+        pptx.layout = 'LAYOUT_16x9';
+
+        try {
+          for (let i = 0; i < totalSlides; i++) {
+            prog(
+              Math.round((i / totalSlides) * 95) + 2,
+              'Slide ' + (i + 1) + ' of ' + totalSlides,
+              'Capturing...'
+            );
+
+            window.goToSlide(i, true);
+
+            // Force all animated elements visible immediately
+            SCOPED.forEach(c => slides[i].querySelectorAll('.'+c).forEach(showEl));
+            fixGradientText(slides[i]);
+
+            // 2500ms settle — images, fonts, layout fully paint before screenshot
+            await new Promise(r => requestAnimationFrame(() => requestAnimationFrame(r)));
+            await new Promise(r => setTimeout(r, 2500));
+
+            // Detect background colour
+            let bg = '#1A1A1A';
+            const bgEl = slides[i].querySelector(':scope > div');
+            if (bgEl) {
+              const c = window.getComputedStyle(bgEl).backgroundColor;
+              if (c && c !== 'transparent' && c !== 'rgba(0, 0, 0, 0)') bg = c;
+            }
+
+            const canvas = await html2canvas(slides[i], {
+              scale: 1,
+              useCORS: true,
+              allowTaint: true,
+              logging: false,
+              width: 1920,
+              height: 1080,
+              x: 0, y: 0,
+              scrollX: -window.scrollX,
+              scrollY: -window.scrollY,
+              windowWidth: window.innerWidth,
+              windowHeight: window.innerHeight,
+              backgroundColor: bg,
+              onclone: (doc) => fixClone(doc)
+            });
+
+            const img = canvas.toDataURL('image/jpeg', 0.92);
+            const slide = pptx.addSlide();
+            slide.addImage({ data: img, x: 0, y: 0, w: '100%', h: '100%' });
+          }
+
+          prog(97, 'Saving PPTX...', 'Almost done');
+          await pptx.writeFile({ fileName: 'JMA_Exec_Overview_2026.pptx' });
+          prog(100, 'Done!', 'File saved');
+          await new Promise(r => setTimeout(r, 800));
+
+        } catch (err) {
+          console.error('Export error:', err);
+          prog(0, 'Error', err.message);
+          await new Promise(r => setTimeout(r, 3000));
+        }
+
+        overlay.remove();
+        window.goToSlide(savedSlide, true);
+        downloadBtn.innerHTML = origBtn;
         downloadBtn.disabled = false;
       }
 
